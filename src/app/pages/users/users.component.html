@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-lg-3 col-md-6">
+      <div class="card" (click)="goToUser(1)">
+        <h3>Magalí</h3>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 col-md-6">
+      <div class="card" (click)="goToUser(2)">
+        <h3>Damian</h3>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 col-md-6">
+      <div class="card" (click)="goToUser(3)">
+        <h3>Boris</h3>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 col-md-6">
+      <div class="card" (click)="goToUser(4)">
+        <h3>Leonel</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1>Filtros: Creado el: {{createdAt}}, Nombre: {{name | uppercase}}</h1>
+    <br>
+    <p>
+      {{data | json}}
+    </p>
+  </div>
+</div>
