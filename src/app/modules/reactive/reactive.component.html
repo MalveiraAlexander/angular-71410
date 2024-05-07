@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6 col-md-4">
+      <form [formGroup]="form" (ngSubmit)="send()">
+        <div class="form-group">
+          <label for="titulo_form_post">Título *</label>
+          <input type="text" formControlName="title" class="form-control" id="titulo_form_post"
+            placeholder="Ingrese el título">
+          <validator [control]="form.controls['title']" name="Título"></validator>
+        </div>
+        <div class="form-group mt-2">
+          <label for="email_form_post">Correo Electronico</label>
+          <input type="email" formControlName="email" class="form-control" id="email_form_post"
+            placeholder="example@example.com">
+          <validator [control]="form.controls['email']" name="Correo Electronico"></validator>
+        </div>
+        <div class="form-group">
+          <label for="name_form_post">Nombre Completo *</label>
+          <input type="text" formControlName="fullName" class="form-control" id="name_form_post"
+            placeholder="Ingrese su nombre y apellido">
+          <validator [control]="form.controls['fullName']" name="Nombre Completo"></validator>
+        </div>
+        <div class="form-group mt-2">
+          <label for="descripcion_form_post">Descripción *</label>
+          <textarea class="form-control" formControlName="description" id="descripcion_form_post" rows="3"
+            placeholder="Ingrese la descripción"></textarea>
+          <validator [control]="form.controls['description']" name="Descripción"></validator>
+        </div>
+        <hr>
+        <div class="form-group mt-3 mb-3">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" formControlName="isDisabledComment" class="custom-control-input"
+              id="comentarios_form_post" name="comentarios">
+            <label class="custom-control-label" for="comentarios">Desactivar comentarios</label>
+          </div>
+        </div>
+        <hr>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary mt-3" id="send_form_post">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>{{values | json}}</p>
+    </div>
+  </div>
+</div>

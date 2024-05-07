@@ -1,0 +1,9 @@
+<div *ngIf="control?.invalid && (control.dirty || control.touched)">
+  <small *ngIf="control.errors['required']" id="float-input" class="p-error block">El campo {{name}} es requerido.</small>
+  <small *ngIf="control.errors['minlength']" id="float-input" class="p-error block">El campo {{name}} necesita al menos {{control.errors['minlength'].requiredLength}} caracteres.</small>
+  <small *ngIf="control.errors['maxlength']" id="float-input" class="p-error block">El campo {{name}} no de contener más de {{control.errors['maxlength'].requiredLength}} caracteres, cantidad actual: {{control.errors['maxlength'].actualLength}}.</small>
+  <small *ngIf="control.errors['email']" id="float-input" class="p-error block">El campo {{name}} no es un correo válido.</small>
+  <small *ngIf="control.errors['min']" id="float-input" class="p-error block">El campo {{name}} es menor a {{control.errors['min'].min}}.</small>
+  <small *ngIf="control.errors['max']" id="float-input" class="p-error block">El campo {{name}} es mayor a {{control.errors['max'].max}}.</small>
+  <small *ngIf="control.errors['pattern']" id="float-input" class="p-error block">El campo {{name}} tiene un formato incorrecto.</small>
+</div>
