@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div *ngIf="stateChangesService.onSearchSignal() && stateChangesService.onSearchSignal().length != 0" class="row justify-content-center mt-3">
+    <h3>Buscando: {{stateChangesService.onSearchSignal()}}</h3>
+  </div>
+  <div class="row justify-content-center mt-3">
+    <div *ngFor="let item of users" class="col-12 col-lg-3 col-md-4 col-sm-6 mt-3">
+      <div class="card">
+        <div class="container-fluid mt-3 mb-3">
+          <div class="row">
+            <div class="col-auto">
+              <h5>Nombre: {{item.name}}</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto">
+              <h5>Email: <a href="mailto:{{item.email}}">{{item.email}}</a></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto">
+              <h5>Telefono: <a href="tel:+{{item.phone}}">{{item.phone}}</a></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
